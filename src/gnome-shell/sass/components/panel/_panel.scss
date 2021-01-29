@@ -54,7 +54,7 @@
     }
 
     &:active, &:overview, &:focus, &:checked {
-      box-shadow: inset 0 -2px on($background);
+      box-shadow: inset 0 -2px*1.5 on($background);
       // Trick due to St limitations. It needs a background to draw a box-shadow
       background-color: rgba($background, .01);
       color: on($background);
@@ -72,7 +72,7 @@
           background-color: transparent;
 
           .clock {
-            box-shadow: inset 0 -2px on($background);
+            box-shadow: inset 0 -2px*1.5 on($background);
             background-color: rgba($background, .01);
           }
         }
@@ -81,22 +81,22 @@
 
     // status area icons
     .system-status-icon {
-      icon-size: 16px;
-      padding: 0 4px;
+      icon-size: 16px * 1.5;
+      padding: 0 4px * 1.5;
     }
 
     // app menu icon
     .app-menu-icon {
       -st-icon-style: symbolic;
-      margin-left: 4px;
-      margin-right: 4px;
+      margin-left: 4px * 1.5;
+      margin-right: 4px * 1.5;
       // dimensions of the icon are hardcoded
     }
   }
 
   .panel-status-indicators-box,
   .panel-status-menu-box {
-    spacing: 2px;
+    spacing: 2px * 1.5;
   }
 
   // spacing between power icon and (optional) percentage label
@@ -171,7 +171,7 @@
 
 // App Menu
 #appMenu {
-  spacing: 4px;
+  spacing: 4px * 1.5;
 
   @if $version <= 3.32 {
     spinner-image: url("process-working.svg");

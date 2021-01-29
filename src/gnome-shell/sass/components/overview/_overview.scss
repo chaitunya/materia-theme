@@ -1,7 +1,7 @@
 /* OVERVIEW */
 
 #overview {
-  spacing: 24px;
+  spacing: 24px * 1.5;
   background-color: transparent;
   color: $on-dark;
 
@@ -11,7 +11,7 @@
 }
 
 .overview-controls {
-  padding-bottom: 32px;
+  padding-bottom: 32px * 1.5;
 }
 
 %overview-panel {
@@ -72,7 +72,7 @@
 }
 
 %-overview-item {
-  padding: 6px;
+  padding: 6px * 1.5;
   border: 0;
   border-radius: $corner-radius;
   background-color: transparent;

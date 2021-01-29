@@ -6,7 +6,7 @@
   -arrow-rise: 0;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-border-radius: 20px; // This is necessary for the weird bug: materia-theme#296
+  -arrow-border-radius: 20px * 1.5; // This is necessary for the weird bug: materia-theme#296
   -arrow-box-shadow: none; // dreaming bugzilla #689995
   -arrow-background-color: transparent;
 }
@@ -24,14 +24,14 @@
   }
 
   &.panel-menu {
-    -boxpointer-gap: 4px; // distance from the panel
+    -boxpointer-gap: 4px * 1.5; // distance from the panel
     margin-bottom: 1.75em;
   }
 }
 
 .popup-menu-content {
-  margin: 5px 8px 8px;
-  padding: 8px 0;
+  margin: 5px * 1.5 8px * 1.5 8px * 1.5;
+  padding: 8px * 1.5 0;
   border-radius: $corner-radius;
   box-shadow: $shadow-2;
   background-color: $surface;
@@ -41,20 +41,20 @@
 // menu items
 .popup-menu-item {
   // min-height: $menuitem-size - 4px * 2;
-  spacing: 8px;
+  spacing: 8px * 1.5;
   padding: 0;
   transition-duration: $duration;
 
   &:ltr {
     padding: 0.4em;
-    padding-right: 24px;
+    padding-right: 24px * 1.5;
     padding-left: 0;
   }
 
   &:rtl {
     padding: 0.4em;
     padding-right: 0;
-    padding-left: 24px;
+    padding-left: 24px * 1.5;
   }
 
   &.selected {
@@ -105,10 +105,10 @@
 
 .popup-menu-arrow {
   @if $version >= 3.32 {
-    icon-size: 16px;
+    icon-size: 16px * 1.5;
   } @else {
-    width: 16px;
-    height: 16px;
+    width: 16px * 1.5;
+    height: 16px * 1.5;
   }
 
   .popup-menu-content & {
@@ -117,7 +117,7 @@
 }
 
 .popup-menu-icon {
-  icon-size: 16px;
+  icon-size: 16px * 1.5;
   color: hint($on-surface);
 }
 
@@ -133,8 +133,8 @@
 // container for radio and check boxes
 .popup-menu-ornament {
   text-align: right;
-  width: 16px;
-  height: 16px;
+  width: 16px * 1.5;
+  height: 16px * 1.5;
 
   &:ltr {
     text-align: right;
@@ -152,21 +152,21 @@
 
     .popup-separator-menu-item-separator {
       // -margin-horizontal: 24px;
-      height: 1px; // not really the whole box
-      margin: 8px 0;
+      height: 1px * 1.5; // not really the whole box
+      margin: 8px * 1.5 0;
       background-color: divider($on-surface);
 
       // submenu separators
       .popup-sub-menu & {
-        margin: 8px 0;
+        margin: 8px * 1.5 0;
         background-color: divider($on-surface);
 
         &:ltr {
-          margin-right: 32px;
+          margin-right: 32px * 1.5;
         }
 
         &:rtl {
-          margin-left: 32px;
+          margin-left: 32px * 1.5;
         }
       }
     }
@@ -174,8 +174,8 @@
 } @else {
   .popup-separator-menu-item {
     // -margin-horizontal: 24px;
-    height: 1px; // not really the whole box
-    margin: 8px 64px - 24px;
+    height: 1px * 1.5; // not really the whole box
+    margin: 8px * 1.5 (64px - 24px) * 1.5;
     border: 0;
     background-color: divider($on-surface);
   }
@@ -183,7 +183,7 @@
 
 // desktop background menu
 .background-menu {
-  -boxpointer-gap: 4px;
+  -boxpointer-gap: 4px * 1.5;
   -arrow-rise: 0; // hide the beak on the menu
 }
 
@@ -194,45 +194,45 @@
   // lock screen, shutdown, etc. buttons
   .popup-menu-icon {
     padding: 0;
-    margin: 0 4px;
+    margin: 0 4px * 1.5;
     -st-icon-style: symbolic; // >= 3.36
   }
 
   .popup-sub-menu .popup-menu-item > :first-child {
     // account for icons in submenus with padding
     &:ltr {
-      padding-left: 16px; 
-      margin-left: 16px;
+      padding-left: 16px * 1.5; 
+      margin-left: 16px * 1.5;
     }
 
     &:rtl {
-      padding-right: 16px;
-      margin-right: 16px;
+      padding-right: 16px * 1.5;
+      margin-right: 16px * 1.5;
     }
   }
 }
 
 @if $version == 3.32 {
   .system-switch-user-submenu-icon {
-    icon-size: 16px;
-    padding: 0 4px;
+    icon-size: 16px * 1.5;
+    padding: 0 4px * 1.5;
   }
 } @else if $version <= 3.30 {
   .system-switch-user-submenu-icon.user-icon {
-    icon-size: 20px;
-    padding: 0 2px;
+    icon-size: 20px * 1.5;
+    padding: 0 2px * 1.5;
   }
 
   .system-switch-user-submenu-icon.default-icon {
-    icon-size: 16px;
-    padding: 0 4px;
+    icon-size: 16px * 1.5;
+    padding: 0 4px * 1.5;
   }
 }
 
 @if $version <= 3.34 {
   .system-menu-action {
     -st-icon-style: symbolic; // >= 3.30
-    padding: ($large-size - 16px) / 2;
+    padding: ($large-size - 16px * 1.5) / 2;
     border: 0;
     border-radius: $large-size / 2; // wish we could do 50%
     color: hint($on-surface);
@@ -240,7 +240,7 @@
 
     &:hover,
     &:focus {
-      padding: ($large-size - 16px) / 2;
+      padding: ($large-size - 16px * 1.5) / 2;
       border: 0;
       color: hint($on-surface);
     }
@@ -260,7 +260,7 @@
     }
 
     > StIcon {
-      icon-size: 16px;
+      icon-size: 16px * 1.5;
     }
   }
 }

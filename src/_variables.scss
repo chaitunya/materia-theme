@@ -4,20 +4,20 @@ $asset-suffix: if($variant == 'dark', '-dark', '');
 // Sizes
 //
 
-$container-padding: if($compact == 'false', 6px, 4px);
+$container-padding: if($compact == 'false', 6px * 1.5, 4px * 1.5);
 
-$small-size: if($compact == 'false', 24px, 24px);
-$medium-size: if($compact == 'false', 36px, 32px);
-$large-size: if($compact == 'false', 48px, 40px);
+$small-size: if($compact == 'false', 24px * 1.5, 24px * 1.5);
+$medium-size: if($compact == 'false', 36px * 1.5, 32px * 1.5);
+$large-size: if($compact == 'false', 48px * 1.5, 40px * 1.5);
 
-$bar-size: 4px;
-$menuitem-size: 28px;
+$bar-size: 4px * 1.5;
+$menuitem-size: 28px * 1.5;
 
 //
 // Radii
 //
 
-$corner-radius: 4px;
+$corner-radius: 4px * 1.5;
 $circular-radius: 9999px;
 
 //

@@ -35,6 +35,10 @@
   }
 }
 
+// image {
+//     -gtk-icon-transform: scale(1.5);
+// }
+
 /**
  * Base States
  */
@@ -1374,6 +1378,9 @@ searchbar > revealer > box {
  */
 
 .titlebar {
+  image {
+      -gtk-icon-transform: scale(1.5);
+  }
   transition: background-color $duration $ease-out, color $duration $ease-out;
   border-radius: $corner-radius $corner-radius 0 0;
   box-shadow: $shadow-z1, inset 0 1px highlight($titlebar);
@@ -1635,6 +1642,7 @@ searchbar > revealer > box {
       margin: 0;
       padding: 0;
     }
+
 
     // workaround for non-animatable buttons
     .background:not(.csd) & button.titlebutton:active {
@@ -2054,7 +2062,7 @@ menuitem {
 
 popover.background {
   transition: $transition-shadow;
-  padding: 2px;
+  padding: 2px * 1.5;
   box-shadow: $shadow-z4; // TODO: this should really have a highlight
   background-color: $surface;
 
@@ -2064,17 +2072,17 @@ popover.background {
 
   &, .csd & {
     border-style: solid;
-    border-width: 1px;
+    border-width: 1px * 1.5;
     border-color: rgba(black, .1) rgba(black, .2) rgba(black, .3);
     border-radius: $corner-radius + 1px;
   }
 
   > stack {
-    margin: -4px; // remove extra padding from menu style popovers
+    margin: -4px * 1.5; // remove extra padding from menu style popovers
   }
 
   > toolbar {
-    margin: -2px;
+    margin: -2px * 1.5;
   }
 
   > list,
@@ -2110,8 +2118,8 @@ popover.background {
   button.model {
     @extend %button-flat;
 
-    min-height: 32px;
-    padding: 0 8px;
+    min-height: 32px * 1.5;
+    padding: 0 8px * 1.5;
     border-radius: $corner-radius;
 
     &:checked {
@@ -2120,7 +2128,7 @@ popover.background {
   }
 
   separator {
-    margin: 4px 0;
+    margin: 4px * 1.5 0;
   }
 
   list separator {
@@ -2143,7 +2151,7 @@ notebook {
   }
 
   > header {
-    border-width: 1px;
+    border-width: 1px * 1.5;
     border-color: divider($on-surface);
     background-color: $background;
     background-clip: border-box;
@@ -2152,7 +2160,7 @@ notebook {
       border-bottom-style: solid;
 
       > tabs {
-        margin-bottom: -1px;
+        margin-bottom: -1px * 1.5;
 
         > tab {
           border-image: linear-gradient(to top, transparent 2px, transparent 2px) 2 / 0 0 2px;
@@ -2162,7 +2170,7 @@ notebook {
           }
 
           &.reorderable-page {
-            border-image-width: 0 1px 2px;
+            border-image-width: 0 1px * 1.5 2px * 1.5;
           }
         }
       }
@@ -2172,7 +2180,7 @@ notebook {
       border-top-style: solid;
 
       > tabs {
-        margin-top: -1px;
+        margin-top: -1px * 1.5;
 
         > tab {
           border-image: linear-gradient(to bottom, transparent 2px, transparent 2px) 2 / 2px 0 0;
@@ -2182,7 +2190,7 @@ notebook {
           }
 
           &.reorderable-page {
-            border-image-width: 2px 1px 0;
+            border-image-width: 2px * 1.5 1px * 1.5 0;
           }
         }
       }
@@ -2192,7 +2200,7 @@ notebook {
       border-right-style: solid;
 
       > tabs {
-        margin-right: -1px;
+        margin-right: -1px * 1.5;
 
         > tab {
           border-image: linear-gradient(to left, transparent 2px, transparent 2px) 2 / 0 2px 0 0;
@@ -2202,7 +2210,7 @@ notebook {
           }
 
           &.reorderable-page {
-            border-image-width: 1px 2px 1px 0;
+            border-image-width: 1px * 1.5 2px * 1.5 1px * 1.5 0;
           }
         }
       }
@@ -2212,7 +2220,7 @@ notebook {
       border-left-style: solid;
 
       > tabs {
-        margin-left: -1px;
+        margin-left: -1px * 1.5;
 
         > tab {
           border-image: linear-gradient(to right, transparent 2px, transparent 2px) 2 / 0 0 0 2px;
@@ -2222,7 +2230,7 @@ notebook {
           }
 
           &.reorderable-page {
-            border-image-width: 1px 0 1px 2px;
+            border-image-width: 1px * 1.5 0 1px * 1.5 2px * 1.5;
           }
         }
       }
@@ -2241,16 +2249,16 @@ notebook {
     }
 
     @at-root %notebook_vert_arrows {
-      padding-left: 4px;
-      padding-right: 4px;
+      padding-left: 4px * 1.5;
+      padding-right: 4px * 1.5;
 
       &.down {
-        margin-left: -8px;
+        margin-left: -8px * 1.5;
         -gtk-icon-source: -gtk-icontheme('pan-start-symbolic');
       }
 
       &.up {
-        margin-right: -8px;
+        margin-right: -8px * 1.5;
         -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
       }
     }
@@ -2268,23 +2276,23 @@ notebook {
     }
 
     @at-root %notebook_horz_arrows {
-      padding-top: 4px;
-      padding-bottom: 4px;
+      padding-top: 4px * 1.5;
+      padding-bottom: 4px * 1.5;
 
       &.down {
-        margin-top: -8px;
+        margin-top: -8px * 1.5;
         -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
       }
 
       &.up {
-        margin-bottom: -8px;
+        margin-bottom: -8px * 1.5;
         -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
       }
     }
 
     > tabs > arrow {
-      min-height: 16px;
-      min-width: 16px;
+      min-height: 16px * 1.5;
+      min-width: 16px * 1.5;
       border-radius: 0;
       color: hint($on-surface);
       @extend %ripple;
@@ -2301,9 +2309,9 @@ notebook {
                   background-image 0ms;
       min-height: $small-size;
       min-width: $small-size;
-      padding: $container-padding 12px;
+      padding: $container-padding 12px * 1.5;
 
-      border-width: 1px;         // for reorderable tabs
+      border-width: 1px * 1.5;         // for reorderable tabs
       border-color: transparent; //
 
       outline: none;
@@ -2347,8 +2355,8 @@ notebook {
       // FIXME: The tab node doesn't have :drop(active), instead its child box has it.
       > box {
         transition: background-color $duration $ease-out;
-        margin: -$container-padding -12px;
-        padding: $container-padding 12px;
+        margin: -$container-padding -12px * 1.5;
+        padding: $container-padding 12px * 1.5;
 
         &:drop(active) {
           background-color: overlay("hover", $on-surface);
@@ -2361,11 +2369,11 @@ notebook {
 
         &:last-child {
           margin-left: $container-padding;
-          margin-right: $container-padding - 12px;
+          margin-right: $container-padding - 12px * 1.5;
         }
 
         &:first-child {
-          margin-left: $container-padding - 12px;
+          margin-left: $container-padding - 12px * 1.5;
           margin-right: $container-padding;
         }
       }
@@ -2374,8 +2382,8 @@ notebook {
     &.top,
     &.bottom {
       tabs {
-        padding-left: 8px;
-        padding-right: 8px;
+        padding-left: 8px * 1.5;
+        padding-right: 8px * 1.5;
 
         &:not(:only-child) {
           &:first-child {
@@ -2396,8 +2404,8 @@ notebook {
     &.left,
     &.right {
       tabs {
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 8px * 1.5;
+        padding-bottom: 8px * 1.5;
 
         &:not(:only-child) {
           &:first-child {
@@ -2426,7 +2434,7 @@ notebook {
  */
 
 scrollbar {
-  $_slider_min_length: 24px;
+  $_slider_min_length: 24px * 1.5;
 
   // disable steppers
   @at-root * {
